@@ -235,6 +235,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ComponentModel\Attributes\ArchetypePropertyAttribute.cs" />
+    <Compile Include="ComponentModel\Attributes\ArchetypePropertiesAttribute.cs" />
     <Compile Include="ComponentModel\ValueResolvers\ArchetypePropertyValueResolver.cs" />
     <Compile Include="ComponentModel\ValueResolvers\DittoArchetypeValueResolver.cs" />
     <Compile Include="Extensions\ArchetypeFieldsetModelExtensions.cs" />
