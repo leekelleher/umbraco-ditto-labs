@@ -1,6 +1,11 @@
 # Ditto Labs
+## Fun with Ditto!
 
-Fun with Ditto!
+The Ditto Labs are a way to try out experiments with Umbraco, Ditto and other 3rd party libraries.
+
+This should not be considered as a serious effort. It is more to see what we can do with Ditto.
+
+All code is licensed under the [MIT License](LICENSE.md).
 
 ---
 
