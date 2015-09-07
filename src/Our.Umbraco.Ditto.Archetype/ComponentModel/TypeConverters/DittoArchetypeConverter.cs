@@ -1,9 +1,9 @@
 ﻿namespace Our.Umbraco.Ditto.Archetype
 {
-    using global::Archetype.Models;
     using System;
     using System.ComponentModel;
     using System.Globalization;
+    using global::Archetype.Models;
 
     public class DittoArchetypeConverter : TypeConverter
     {

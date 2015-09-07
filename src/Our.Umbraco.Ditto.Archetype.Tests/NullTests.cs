@@ -9,11 +9,21 @@
         public class MyModel { }
 
         [Test]
-        public void Null_Returns_Default()
+        public void Null_Returns_Default_ArchetypeModel()
         {
             var archetype = default(ArchetypeModel);
 
             var model = archetype.As<MyModel>();
+
+            Assert.IsNull(model);
+        }
+
+        [Test]
+        public void Null_Returns_Default_ArchetypeFieldsetModel()
+        {
+            var fieldset = default(ArchetypeFieldsetModel);
+
+            var model = fieldset.As<MyModel>();
 
             Assert.IsNull(model);
         }

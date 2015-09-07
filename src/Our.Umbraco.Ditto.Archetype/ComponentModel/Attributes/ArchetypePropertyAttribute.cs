@@ -1,6 +1,5 @@
 ﻿namespace Our.Umbraco.Ditto.Archetype
 {
-    using global::Archetype.Models;
     using System;
 
     [AttributeUsage(AttributeTargets.All, AllowMultiple = false)]

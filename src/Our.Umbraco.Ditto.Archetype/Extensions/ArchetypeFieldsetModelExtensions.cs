@@ -1,14 +1,14 @@
 ﻿namespace Our.Umbraco.Ditto.Archetype
 {
-    using global::Archetype.Models;
-    using global::Umbraco.Core;
-    using global::Umbraco.Web;
     using System;
     using System.Collections.Concurrent;
     using System.ComponentModel;
     using System.Globalization;
     using System.Linq;
     using System.Reflection;
+    using global::Archetype.Models;
+    using global::Umbraco.Core;
+    using global::Umbraco.Web;
 
     public static class ArchetypeFieldsetModelExtensions
     {
@@ -48,6 +48,11 @@
             CultureInfo culture,
             object instance = null)
         {
+            if (fieldset == null)
+            {
+                return null;
+            }
+
             // Check if the culture has been set, otherwise use from Umbraco, or fallback to a default
             if (culture == null)
             {

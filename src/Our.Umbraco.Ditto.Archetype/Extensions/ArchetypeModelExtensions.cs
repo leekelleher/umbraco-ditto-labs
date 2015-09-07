@@ -1,27 +1,28 @@
 ﻿namespace Our.Umbraco.Ditto.Archetype
 {
-    using global::Archetype.Models;
     using System;
     using System.Collections.Generic;
     using System.Globalization;
-    using System.Linq;
+    using global::Archetype.Models;
 
     public static class ArchetypeModelExtensions
     {
         public static T As<T>(
             this ArchetypeModel archetype,
-            CultureInfo culture = null)
+            CultureInfo culture = null,
+            object instance = null)
              where T : class
         {
-            return archetype.As(typeof(T), culture) as T;
+            return archetype.As(typeof(T), culture, instance) as T;
         }
 
         public static object As(
             this ArchetypeModel archetype,
             Type type,
-            CultureInfo culture = null)
+            CultureInfo culture = null,
+            object instance = null)
         {
-            return ConvertArchetypeModel(archetype, type, culture);
+            return ConvertArchetypeModel(archetype, type, culture, instance);
         }
 
         private static object ConvertArchetypeModel(
@@ -30,7 +31,7 @@
             CultureInfo culture,
             object instance = null)
         {
-            if (archetype == null)
+            if (archetype == null || archetype.Fieldsets == null)
             {
                 return null;
             }
@@ -42,7 +43,7 @@
                 items.Add(fieldset.As(type, culture, archetype, instance));
             }
 
-            return items; // TODO: [LK] Review which object type to return, either List<object> or FirstOrDefault?
+            return items;
         }
     }
 }
