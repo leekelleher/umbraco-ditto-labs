@@ -236,13 +236,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ComponentModel\Attributes\ArchetypePropertyAttribute.cs" />
-    <Compile Include="ComponentModel\Attributes\ArchetypePropertiesAttribute.cs" />
-    <Compile Include="ComponentModel\ValueResolvers\ArchetypePropertyValueResolver.cs" />
-    <Compile Include="ComponentModel\ValueResolvers\DittoArchetypeValueResolver.cs" />
     <Compile Include="Extensions\ArchetypeFieldsetModelExtensions.cs" />
     <Compile Include="Extensions\ArchetypeModelExtensions.cs" />
-    <Compile Include="Extensions\Internal\TypeInitializationExtensions.cs" />
+    <Compile Include="Models\ArchetypePublishedContent.cs" />
+    <Compile Include="Models\ArchetypePublishedContentSet.cs" />
+    <Compile Include="Models\ArchetypePublishedProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ComponentModel\TypeConverters\DittoArchetypeConverter.cs" />
   </ItemGroup>

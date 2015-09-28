@@ -1,7 +1,6 @@
 ﻿namespace Our.Umbraco.Ditto.Archetype
 {
     using System;
-    using System.Collections.Generic;
     using System.Globalization;
     using global::Archetype.Models;
 
@@ -25,6 +24,11 @@
             return ConvertArchetypeModel(archetype, type, culture, instance);
         }
 
+        public static ArchetypePublishedContentSet ToPublishedContentSet(this ArchetypeModel archetype)
+        {
+            return new ArchetypePublishedContentSet(archetype);
+        }
+
         private static object ConvertArchetypeModel(
             ArchetypeModel archetype,
             Type type,
@@ -36,14 +40,7 @@
                 return null;
             }
 
-            var items = new List<object>();
-
-            foreach (var fieldset in archetype.Fieldsets)
-            {
-                items.Add(fieldset.As(type, culture, archetype, instance));
-            }
-
-            return items;
+            return archetype.ToPublishedContentSet().As(type, culture);
         }
     }
 }
