@@ -2,6 +2,14 @@
 
 Here are some things that we're experimenting with...
 
+---
+
+## Ditto ModelFactory
+
+> The Ditto ModelFactory was originally part of the main [Ditto source-code repository](https://github.com/leekelleher/umbraco-ditto/).
+
+---
+
 ## Ditto for Archetype
 
 Exploring a way to enable Ditto to map `ArchetypeModel` and `ArchetypeFieldsetModel` objects to a POCO/model.
