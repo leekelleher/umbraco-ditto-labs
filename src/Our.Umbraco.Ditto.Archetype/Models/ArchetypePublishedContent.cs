@@ -1,172 +1,177 @@
 ﻿namespace Our.Umbraco.Ditto.Archetype
 {
-	using System;
-	using System.Collections.Generic;
-	using System.Linq;
-	using global::Archetype.Models;
-	using global::Umbraco.Core;
-	using global::Umbraco.Core.Models;
-	using global::Umbraco.Core.Models.PublishedContent;
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using global::Archetype.Models;
+    using global::Umbraco.Core;
+    using global::Umbraco.Core.Models;
+    using global::Umbraco.Core.Models.PublishedContent;
 
-	public class ArchetypePublishedContent : IPublishedContent
-	{
-		private ArchetypeFieldsetModel _fieldset;
+    public class ArchetypePublishedContent : IPublishedContent
+    {
+        private ArchetypeFieldsetModel _fieldset;
 
-		public ArchetypePublishedContent(ArchetypeFieldsetModel fieldset)
-		{
-			_fieldset = fieldset;
-		}
+        public ArchetypePublishedContent(ArchetypeFieldsetModel fieldset)
+        {
+            _fieldset = fieldset;
+        }
 
-		public IEnumerable<IPublishedContent> Children
-		{
-			get { return null; }
-		}
+        public IEnumerable<IPublishedContent> Children
+        {
+            get { return null; }
+        }
 
-		public IEnumerable<IPublishedContent> ContentSet
-		{
-			get { return null; }
-		}
+        public IEnumerable<IPublishedContent> ContentSet
+        {
+            get { return null; }
+        }
 
-		public PublishedContentType ContentType
-		{
-			get { return null; }
-		}
+        public PublishedContentType ContentType
+        {
+            get { return null; }
+        }
 
-		public DateTime CreateDate
-		{
-			get { return DateTime.MinValue; }
-		}
+        public DateTime CreateDate
+        {
+            get { return DateTime.MinValue; }
+        }
 
-		public int CreatorId
-		{
-			get { return 0; }
-		}
+        public int CreatorId
+        {
+            get { return 0; }
+        }
 
-		public string CreatorName
-		{
-			get { return null; }
-		}
+        public string CreatorName
+        {
+            get { return null; }
+        }
 
-		public string DocumentTypeAlias
-		{
-			get { return _fieldset.Alias; }
-		}
+        public string DocumentTypeAlias
+        {
+            get { return _fieldset.Alias; }
+        }
 
-		public int DocumentTypeId
-		{
-			get { return -1; }
-		}
+        public int DocumentTypeId
+        {
+            get { return -1; }
+        }
 
-		public int GetIndex()
-		{
-			return -1;
-		}
+        public int GetIndex()
+        {
+            return -1;
+        }
 
-		public IPublishedProperty GetProperty(string alias, bool recurse)
-		{
-			var property = _fieldset.Properties.FirstOrDefault(x => x.Alias.InvariantEquals(alias));
+        public IPublishedProperty GetProperty(string alias, bool recurse)
+        {
+            var property = _fieldset.Properties.FirstOrDefault(x => x.Alias.InvariantEquals(alias));
 
-			return new ArchetypePublishedProperty(property);
-		}
+            if (property != null)
+            {
+                return new ArchetypePublishedProperty(property);
+            }
 
-		public IPublishedProperty GetProperty(string alias)
-		{
-			return this.GetProperty(alias, false);
-		}
+            return null;
+        }
 
-		public int Id
-		{
-			get { return -1; }
-		}
+        public IPublishedProperty GetProperty(string alias)
+        {
+            return this.GetProperty(alias, false);
+        }
 
-		public bool IsDraft
-		{
-			get { return _fieldset.Disabled; }
-		}
+        public int Id
+        {
+            get { return -1; }
+        }
 
-		public PublishedItemType ItemType
-		{
-			get { return PublishedItemType.Content; }
-		}
+        public bool IsDraft
+        {
+            get { return _fieldset.Disabled; }
+        }
 
-		public int Level
-		{
-			get { return 0; }
-		}
+        public PublishedItemType ItemType
+        {
+            get { return PublishedItemType.Content; }
+        }
 
-		public string Name
-		{
-			get { return _fieldset.Alias; }
-		}
+        public int Level
+        {
+            get { return 0; }
+        }
 
-		public IPublishedContent Parent
-		{
-			get { return null; }
-		}
+        public string Name
+        {
+            get { return _fieldset.Alias; }
+        }
 
-		public string Path
-		{
-			get { return null; }
-		}
+        public IPublishedContent Parent
+        {
+            get { return null; }
+        }
 
-		public ICollection<IPublishedProperty> Properties
-		{
-			get
-			{
-				return _fieldset.Properties
-					.Select(x => new ArchetypePublishedProperty(x))
-					.Cast<IPublishedProperty>()
-					.ToList();
-			}
-		}
+        public string Path
+        {
+            get { return null; }
+        }
 
-		public int SortOrder
-		{
-			get { return 0; }
-		}
+        public ICollection<IPublishedProperty> Properties
+        {
+            get
+            {
+                return _fieldset.Properties
+                    .Select(x => new ArchetypePublishedProperty(x))
+                    .Cast<IPublishedProperty>()
+                    .ToList();
+            }
+        }
 
-		public int TemplateId
-		{
-			get { return 0; }
-		}
+        public int SortOrder
+        {
+            get { return 0; }
+        }
 
-		public DateTime UpdateDate
-		{
-			get { return DateTime.MinValue; }
-		}
+        public int TemplateId
+        {
+            get { return 0; }
+        }
 
-		public string Url
-		{
-			get { return null; }
-		}
+        public DateTime UpdateDate
+        {
+            get { return DateTime.MinValue; }
+        }
 
-		public string UrlName
-		{
-			get { return null; }
-		}
+        public string Url
+        {
+            get { return null; }
+        }
 
-		public Guid Version
-		{
-			get { return Guid.Empty; }
-		}
+        public string UrlName
+        {
+            get { return null; }
+        }
 
-		public int WriterId
-		{
-			get { return 0; }
-		}
+        public Guid Version
+        {
+            get { return Guid.Empty; }
+        }
 
-		public string WriterName
-		{
-			get { return null; }
-		}
+        public int WriterId
+        {
+            get { return 0; }
+        }
 
-		public object this[string alias]
-		{
-			get
-			{
-				var property = this.GetProperty(alias);
-				return property == null ? null : property.Value;
-			}
-		}
-	}
+        public string WriterName
+        {
+            get { return null; }
+        }
+
+        public object this[string alias]
+        {
+            get
+            {
+                var property = this.GetProperty(alias);
+                return property == null ? null : property.Value;
+            }
+        }
+    }
 }
