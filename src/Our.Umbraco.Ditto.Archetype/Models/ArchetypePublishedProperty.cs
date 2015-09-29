@@ -22,7 +22,9 @@
             get
             {
                 if (_property == null || _property.Value == null)
+                {
                     return false;
+                }
 
                 return !string.IsNullOrEmpty(_property.Value.ToString());
             }
@@ -47,7 +49,7 @@
             {
                 if (this.HasValue)
                 {
-                    return _property.GetValue<string>();
+                    return _property.Value;
                 }
 
                 return null;
