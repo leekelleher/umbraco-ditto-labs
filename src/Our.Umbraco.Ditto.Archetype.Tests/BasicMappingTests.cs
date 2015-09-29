@@ -54,7 +54,7 @@
 
             Assert.IsNotNull(model);
             Assert.IsNotNull(model.MyProperty);
-            Assert.IsInstanceOf<SimpleModel>(model.MyProperty);
+            Assert.That(model.MyProperty, Is.InstanceOf<SimpleModel>());
         }
     }
 }

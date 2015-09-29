@@ -244,6 +244,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchetypePublishedContent_Tests.cs" />
     <Compile Include="FieldsetMappingTests.cs" />
     <Compile Include="BasicMappingTests.cs" />
     <Compile Include="NullTests.cs" />
