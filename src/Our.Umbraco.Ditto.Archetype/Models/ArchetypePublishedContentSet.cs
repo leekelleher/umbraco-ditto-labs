@@ -1,9 +1,9 @@
-﻿namespace Our.Umbraco.Ditto.Archetype
+﻿namespace Our.Umbraco.Ditto
 {
     using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
-    using global::Archetype.Models;
+    using Archetype.Models;
 
     public class ArchetypePublishedContentSet : IEnumerable<ArchetypePublishedContent>
     {

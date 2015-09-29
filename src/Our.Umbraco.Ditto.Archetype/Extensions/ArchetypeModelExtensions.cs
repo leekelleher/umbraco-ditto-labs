@@ -1,39 +1,25 @@
-﻿namespace Our.Umbraco.Ditto.Archetype
+﻿namespace Our.Umbraco.Ditto
 {
     using System;
+    using System.Collections.Generic;
     using System.Globalization;
-    using global::Archetype.Models;
+    using Archetype.Models;
+    using global::Umbraco.Core.Models;
 
     public static class ArchetypeModelExtensions
     {
         public static T As<T>(
             this ArchetypeModel archetype,
-            CultureInfo culture = null,
-            object instance = null)
-             where T : class
+            CultureInfo culture = null)
+            where T : class
         {
-            return archetype.As(typeof(T), culture, instance) as T;
+            return archetype.As(typeof(T), culture) as T;
         }
 
         public static object As(
             this ArchetypeModel archetype,
             Type type,
-            CultureInfo culture = null,
-            object instance = null)
-        {
-            return ConvertArchetypeModel(archetype, type, culture, instance);
-        }
-
-        public static ArchetypePublishedContentSet ToPublishedContentSet(this ArchetypeModel archetype)
-        {
-            return new ArchetypePublishedContentSet(archetype);
-        }
-
-        private static object ConvertArchetypeModel(
-            ArchetypeModel archetype,
-            Type type,
-            CultureInfo culture,
-            object instance = null)
+            CultureInfo culture = null)
         {
             if (archetype == null || archetype.Fieldsets == null)
             {
@@ -41,6 +27,11 @@
             }
 
             return archetype.ToPublishedContentSet().As(type, culture);
+        }
+
+        public static IEnumerable<IPublishedContent> ToPublishedContentSet(this ArchetypeModel archetype)
+        {
+            return new ArchetypePublishedContentSet(archetype);
         }
     }
 }

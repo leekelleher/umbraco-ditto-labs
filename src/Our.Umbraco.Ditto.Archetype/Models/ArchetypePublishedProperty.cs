@@ -1,6 +1,6 @@
-﻿namespace Our.Umbraco.Ditto.Archetype
+﻿namespace Our.Umbraco.Ditto
 {
-    using global::Archetype.Models;
+    using Archetype.Models;
     using global::Umbraco.Core.Models;
 
     public class ArchetypePublishedProperty : IPublishedProperty

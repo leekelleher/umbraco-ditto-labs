@@ -1,15 +1,15 @@
-﻿namespace Our.Umbraco.Ditto.Archetype
+﻿namespace Our.Umbraco.Ditto
 {
     using System;
     using System.ComponentModel;
     using System.Globalization;
-    using global::Archetype.Models;
+    using Archetype.Models;
 
     public class DittoArchetypeConverter : TypeConverter
     {
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {
-            if (sourceType == typeof(ArchetypeModel))
+            if (sourceType == typeof(ArchetypeModel) || sourceType == typeof(ArchetypeFieldsetModel))
             {
                 return true;
             }
@@ -19,10 +19,19 @@
 
         public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
         {
-            if (value is ArchetypeModel && context != null && context.PropertyDescriptor != null)
+            if (context != null && context.PropertyDescriptor != null)
             {
                 var propertyType = context.PropertyDescriptor.PropertyType;
-                return ((ArchetypeModel)value).As(propertyType, culture);
+
+                if (value is ArchetypeModel)
+                {
+                    return ((ArchetypeModel)value).As(propertyType, culture);
+                }
+
+                if (value is ArchetypeFieldsetModel)
+                {
+                    return ((ArchetypeFieldsetModel)value).As(propertyType, culture);
+                }
             }
 
             return base.ConvertFrom(context, culture, value);

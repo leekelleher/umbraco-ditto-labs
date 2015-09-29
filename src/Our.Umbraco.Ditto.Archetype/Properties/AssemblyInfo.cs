@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("Our.Umbraco.Ditto.Archetype")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("An Archetype to IPublishedContent bridge for Ditto.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Umbrella Inc Ltd")]
 [assembly: AssemblyProduct("Ditto")]

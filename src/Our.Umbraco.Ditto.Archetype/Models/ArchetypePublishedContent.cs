@@ -1,9 +1,9 @@
-﻿namespace Our.Umbraco.Ditto.Archetype
+﻿namespace Our.Umbraco.Ditto
 {
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using global::Archetype.Models;
+    using Archetype.Models;
     using global::Umbraco.Core;
     using global::Umbraco.Core.Models;
     using global::Umbraco.Core.Models.PublishedContent;
@@ -19,17 +19,17 @@
 
         public IEnumerable<IPublishedContent> Children
         {
-            get { return null; }
+            get { return Enumerable.Empty<IPublishedContent>(); }
         }
 
         public IEnumerable<IPublishedContent> ContentSet
         {
-            get { return null; }
+            get { return Enumerable.Empty<IPublishedContent>(); }
         }
 
         public PublishedContentType ContentType
         {
-            get { return null; }
+            get { return default(PublishedContentType); }
         }
 
         public DateTime CreateDate
@@ -39,12 +39,12 @@
 
         public int CreatorId
         {
-            get { return 0; }
+            get { return default(int); }
         }
 
         public string CreatorName
         {
-            get { return null; }
+            get { return default(string); }
         }
 
         public string DocumentTypeAlias
@@ -54,12 +54,12 @@
 
         public int DocumentTypeId
         {
-            get { return -1; }
+            get { return default(int); }
         }
 
         public int GetIndex()
         {
-            return -1;
+            return default(int);
         }
 
         public IPublishedProperty GetProperty(string alias, bool recurse)
@@ -81,7 +81,7 @@
 
         public int Id
         {
-            get { return -1; }
+            get { return default(int); }
         }
 
         public bool IsDraft
@@ -96,7 +96,7 @@
 
         public int Level
         {
-            get { return 0; }
+            get { return default(int); }
         }
 
         public string Name
@@ -106,12 +106,12 @@
 
         public IPublishedContent Parent
         {
-            get { return null; }
+            get { return default(IPublishedContent); }
         }
 
         public string Path
         {
-            get { return null; }
+            get { return default(string); }
         }
 
         public ICollection<IPublishedProperty> Properties
@@ -127,27 +127,27 @@
 
         public int SortOrder
         {
-            get { return 0; }
+            get { return default(int); }
         }
 
         public int TemplateId
         {
-            get { return 0; }
+            get { return default(int); }
         }
 
         public DateTime UpdateDate
         {
-            get { return DateTime.MinValue; }
+            get { return default(DateTime); }
         }
 
         public string Url
         {
-            get { return null; }
+            get { return default(string); }
         }
 
         public string UrlName
         {
-            get { return null; }
+            get { return default(string); }
         }
 
         public Guid Version
@@ -157,12 +157,12 @@
 
         public int WriterId
         {
-            get { return 0; }
+            get { return default(int); }
         }
 
         public string WriterName
         {
-            get { return null; }
+            get { return default(string); }
         }
 
         public object this[string alias]
