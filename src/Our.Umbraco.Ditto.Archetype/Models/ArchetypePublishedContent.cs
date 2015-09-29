@@ -101,7 +101,7 @@
 
         public string Name
         {
-            get { return _fieldset.Alias; }
+            get { return default(string); }
         }
 
         public IPublishedContent Parent

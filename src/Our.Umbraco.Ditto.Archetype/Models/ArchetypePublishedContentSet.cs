@@ -11,7 +11,9 @@
 
         public ArchetypePublishedContentSet(ArchetypeModel archetype)
         {
-            items = archetype.Fieldsets.Select(x => new ArchetypePublishedContent(x));
+            items = archetype.Fieldsets
+                .Where(x => x.Disabled == false)
+                .Select(x => new ArchetypePublishedContent(x));
         }
 
         public IEnumerator<ArchetypePublishedContent> GetEnumerator()

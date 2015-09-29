@@ -44,8 +44,8 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Our.Umbraco.Ditto, Version=0.8.5711.20139, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Our.Umbraco.Ditto.0.8.0\lib\net45\Our.Umbraco.Ditto.dll</HintPath>
+    <Reference Include="Our.Umbraco.Ditto, Version=0.8.5746.20658, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Our.Umbraco.Ditto.0.8.3\lib\net45\Our.Umbraco.Ditto.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />

@@ -132,8 +132,8 @@
       <HintPath>..\packages\NUnit.2.6.4\lib\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Our.Umbraco.Ditto, Version=0.8.5711.20139, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Our.Umbraco.Ditto.0.8.0\lib\net45\Our.Umbraco.Ditto.dll</HintPath>
+    <Reference Include="Our.Umbraco.Ditto, Version=0.8.5746.20658, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Our.Umbraco.Ditto.0.8.3\lib\net45\Our.Umbraco.Ditto.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="SQLCE4Umbraco, Version=1.0.5350.25718, Culture=neutral, processorArchitecture=MSIL">
@@ -244,9 +244,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArchetypePublishedContent_Tests.cs" />
+    <Compile Include="ArchetypeModelConversionTests.cs" />
+    <Compile Include="BasicArchetypeModelMappingTests.cs" />
     <Compile Include="FieldsetMappingTests.cs" />
-    <Compile Include="BasicMappingTests.cs" />
+    <Compile Include="NestedArchetypeMappingTests.cs" />
+    <Compile Include="SimplePropertyMappingTests.cs" />
     <Compile Include="NullTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

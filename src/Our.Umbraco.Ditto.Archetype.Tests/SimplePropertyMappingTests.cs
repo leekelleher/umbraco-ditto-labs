@@ -1,12 +1,12 @@
 ﻿namespace Our.Umbraco.Ditto.Archetype.Tests
 {
-    using System.Linq;
+    using System.ComponentModel;
     using global::Archetype.Models;
     using Newtonsoft.Json;
     using NUnit.Framework;
 
     [TestFixture]
-    public class FieldsetMappingTests
+    public class SimplePropertyMappingTests
     {
         private ArchetypeModel _archetype;
 
@@ -20,18 +20,26 @@
 
         public class MyModel
         {
+            [TypeConverter(typeof(DittoArchetypeConverter))]
+            public SimpleModel MyProperty { get; set; }
+        }
+
+        public class SimpleModel
+        {
             public string TextField { get; set; }
         }
 
         [Test]
-        public void Fieldset_Model_Mapped()
+        public void Simple_Property_Mapped()
         {
-            var fieldset = _archetype.Fieldsets.FirstOrDefault();
-            var model = fieldset.As<MyModel>();
+            var property = new Contrib.PublishedPropertyMock("myProperty", _archetype, true);
+            var content = new Contrib.PublishedContentMock { Properties = new[] { property } };
+
+            var model = content.As<MyModel>();
 
             Assert.IsNotNull(model);
-            Assert.IsInstanceOf<MyModel>(model);
-            Assert.That(model.TextField, Is.EqualTo("Testing text field"));
+            Assert.IsNotNull(model.MyProperty);
+            Assert.That(model.MyProperty, Is.InstanceOf<SimpleModel>());
         }
     }
 }

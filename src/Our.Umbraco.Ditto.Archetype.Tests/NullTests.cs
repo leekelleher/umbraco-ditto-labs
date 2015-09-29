@@ -11,7 +11,7 @@
         [Test]
         public void Null_Returns_Default_ArchetypeModel()
         {
-            var archetype = default(ArchetypeModel);
+            ArchetypeModel archetype = null;
 
             var model = archetype.As<MyModel>();
 
@@ -21,7 +21,7 @@
         [Test]
         public void Null_Returns_Default_ArchetypeFieldsetModel()
         {
-            var fieldset = default(ArchetypeFieldsetModel);
+            ArchetypeFieldsetModel fieldset = null;
 
             var model = fieldset.As<MyModel>();
 
