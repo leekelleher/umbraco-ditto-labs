@@ -11,10 +11,14 @@
 
         public ArchetypePublishedContentSet(ArchetypeModel archetype)
         {
+            this.ArchetypeModel = archetype;
+
             items = archetype.Fieldsets
                 .Where(x => x.Disabled == false)
                 .Select(x => new ArchetypePublishedContent(x));
         }
+
+        internal ArchetypeModel ArchetypeModel { get; private set; }
 
         public IEnumerator<ArchetypePublishedContent> GetEnumerator()
         {

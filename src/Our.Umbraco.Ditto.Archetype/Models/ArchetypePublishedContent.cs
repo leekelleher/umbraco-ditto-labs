@@ -17,6 +17,11 @@
             _fieldset = fieldset;
         }
 
+        internal ArchetypeFieldsetModel ArchetypeFieldset
+        {
+            get { return _fieldset; }
+        }
+
         public IEnumerable<IPublishedContent> Children
         {
             get { return Enumerable.Empty<IPublishedContent>(); }
@@ -64,11 +69,14 @@
 
         public IPublishedProperty GetProperty(string alias, bool recurse)
         {
-            var property = _fieldset.Properties.FirstOrDefault(x => x.Alias.InvariantEquals(alias));
-
-            if (property != null)
+            if (_fieldset.Properties != null)
             {
-                return new ArchetypePublishedProperty(property);
+                var property = _fieldset.Properties.FirstOrDefault(x => x.Alias.InvariantEquals(alias));
+
+                if (property != null)
+                {
+                    return new ArchetypePublishedProperty(property);
+                }
             }
 
             return null;

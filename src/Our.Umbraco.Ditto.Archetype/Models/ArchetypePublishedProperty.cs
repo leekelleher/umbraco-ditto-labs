@@ -12,6 +12,11 @@
             _property = property;
         }
 
+        internal ArchetypePropertyModel ArchetypeProperty
+        {
+            get { return _property; }
+        }
+
         public object DataValue
         {
             get { return this.Value; }
