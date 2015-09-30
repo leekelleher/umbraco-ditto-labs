@@ -2,9 +2,9 @@
 {
     using System.Linq;
     using global::Archetype.Models;
+    using global::Archetype.PropertyConverters;
     using global::Umbraco.Core.Models;
     using global::Umbraco.Web;
-    using Newtonsoft.Json;
     using NUnit.Framework;
 
     [TestFixture]
@@ -16,8 +16,9 @@
         public void Init()
         {
             var archetypeJson = "{\"fieldsets\":[{\"properties\":[{\"alias\":\"textField\",\"value\":\"Testing text field\"}],\"alias\":\"myModel\",\"disabled\":false}]}";
+            var converter = new ArchetypeValueConverter();
 
-            _archetype = JsonConvert.DeserializeObject<ArchetypeModel>(archetypeJson);
+            _archetype = (ArchetypeModel)converter.ConvertDataToSource(null, archetypeJson, false);
         }
 
         [Test]

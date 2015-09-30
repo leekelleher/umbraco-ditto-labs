@@ -1,9 +1,8 @@
 ﻿namespace Our.Umbraco.Ditto.Archetype.Tests
 {
-    using System.ComponentModel;
     using System.Linq;
     using global::Archetype.Models;
-    using Newtonsoft.Json;
+    using global::Archetype.PropertyConverters;
     using NUnit.Framework;
 
     [TestFixture]
@@ -15,8 +14,9 @@
         public void Init()
         {
             var archetypeJson = "{\"fieldsets\":[{\"properties\":[{\"alias\":\"name\",\"value\":\"Section 1\"},{\"alias\":\"content\",\"value\":\"{\\\"fieldsets\\\":[{\\\"properties\\\":[{\\\"alias\\\":\\\"contentType\\\",\\\"value\\\":\\\"Static\\\"}],\\\"alias\\\":\\\"section\\\",\\\"disabled\\\":false},{\\\"properties\\\":[{\\\"alias\\\":\\\"contentType\\\",\\\"value\\\":\\\"Dynamic\\\"}],\\\"alias\\\":\\\"section\\\",\\\"disabled\\\":false},{\\\"properties\\\":[{\\\"alias\\\":\\\"contentType\\\",\\\"value\\\":\\\"Branded\\\"}],\\\"alias\\\":\\\"section\\\",\\\"disabled\\\":false}]}\"}],\"alias\":\"sections\",\"disabled\":false}]}";
+            var converter = new ArchetypeValueConverter();
 
-            _archetype = JsonConvert.DeserializeObject<ArchetypeModel>(archetypeJson);
+            _archetype = (ArchetypeModel)converter.ConvertDataToSource(null, archetypeJson, false);
         }
 
         [Test]
@@ -30,7 +30,6 @@
         {
             public string Name { get; set; }
 
-            //[TypeConverter(typeof(DittoArchetypeConverter))]
             public ArchetypeModel Content { get; set; }
         }
 

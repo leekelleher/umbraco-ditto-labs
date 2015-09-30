@@ -2,7 +2,7 @@
 {
     using System.Linq;
     using global::Archetype.Models;
-    using Newtonsoft.Json;
+    using global::Archetype.PropertyConverters;
     using NUnit.Framework;
 
     [TestFixture]
@@ -14,8 +14,9 @@
         public void Init()
         {
             var archetypeJson = "{\"fieldsets\":[{\"properties\":[{\"alias\":\"textField\",\"value\":\"Testing text field\"}],\"alias\":\"myModel\",\"disabled\":false}]}";
+            var converter = new ArchetypeValueConverter();
 
-            _archetype = JsonConvert.DeserializeObject<ArchetypeModel>(archetypeJson);
+            _archetype = (ArchetypeModel)converter.ConvertDataToSource(null, archetypeJson, false);
         }
 
         public class MyModel
