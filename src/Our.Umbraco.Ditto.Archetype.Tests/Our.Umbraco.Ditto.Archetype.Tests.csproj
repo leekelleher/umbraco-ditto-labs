@@ -247,6 +247,7 @@
     <Compile Include="ArchetypeModelConversionTests.cs" />
     <Compile Include="BasicArchetypeModelMappingTests.cs" />
     <Compile Include="FieldsetMappingTests.cs" />
+    <Compile Include="ArchetypePropertyValueResolverTests.cs" />
     <Compile Include="NestedArchetypeMappingTests.cs" />
     <Compile Include="SimplePropertyMappingTests.cs" />
     <Compile Include="NullTests.cs" />
