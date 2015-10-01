@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Ditto.Archetype", "Our.Umbraco.Ditto.Archetype\Our.Umbraco.Ditto.Archetype.csproj", "{6C5D5B08-C390-4D15-B7FC-4DA82485E97A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Ditto.Archetype.Tests", "Our.Umbraco.Ditto.Archetype.Tests\Our.Umbraco.Ditto.Archetype.Tests.csproj", "{6DB05105-8186-4CCC-9126-4CDE7D1729CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Ditto.Archetype.Tests", "..\tests\Our.Umbraco.Ditto.Archetype.Tests\Our.Umbraco.Ditto.Archetype.Tests.csproj", "{6DB05105-8186-4CCC-9126-4CDE7D1729CA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{44E7FE03-8E2A-475C-87F2-A9212CF294AB}"
 EndProject
