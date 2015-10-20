@@ -77,7 +77,7 @@
         {
             get
             {
-                if (_propertyType != null)
+                if (_propertyType != null && !string.IsNullOrWhiteSpace(_propertyType.PropertyTypeAlias))
                 {
                     return _propertyType.PropertyTypeAlias;
                 }
