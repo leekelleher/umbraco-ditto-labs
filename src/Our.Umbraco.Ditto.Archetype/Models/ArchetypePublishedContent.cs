@@ -12,9 +12,15 @@
     {
         private ArchetypeFieldsetModel _fieldset;
 
+        private bool _initialized;
+
+        private IPublishedProperty[] _properties;
+
         public ArchetypePublishedContent(ArchetypeFieldsetModel fieldset)
         {
             _fieldset = fieldset;
+
+            Initialize();
         }
 
         internal ArchetypeFieldsetModel ArchetypeFieldset
@@ -69,17 +75,7 @@
 
         public IPublishedProperty GetProperty(string alias, bool recurse)
         {
-            if (_fieldset.Properties != null)
-            {
-                var property = _fieldset.Properties.FirstOrDefault(x => x.Alias.InvariantEquals(alias));
-
-                if (property != null)
-                {
-                    return new ArchetypePublishedProperty(property);
-                }
-            }
-
-            return null;
+            return Properties.FirstOrDefault(x => x.PropertyTypeAlias.InvariantEquals(alias));
         }
 
         public IPublishedProperty GetProperty(string alias)
@@ -126,10 +122,12 @@
         {
             get
             {
-                return _fieldset.Properties
-                    .Select(x => new ArchetypePublishedProperty(x))
-                    .Cast<IPublishedProperty>()
-                    .ToList();
+                if (_initialized == false)
+                {
+                    Initialize();
+                }
+
+                return _properties;
             }
         }
 
@@ -178,8 +176,31 @@
             get
             {
                 var property = this.GetProperty(alias);
-                return property == null ? null : property.Value;
+
+                return property == null
+                    ? null
+                    : property.Value;
             }
+        }
+
+        private void Initialize()
+        {
+            if (_fieldset == null)
+            {
+                return;
+            }
+
+            // TODO: [LK] Find a way to populate `ContentType`.
+
+            if (_fieldset.Properties != null)
+            {
+                _properties = _fieldset.Properties
+                    .Select(x => new ArchetypePublishedProperty(x, this.ContentType))
+                    .Cast<IPublishedProperty>()
+                    .ToArray();
+            }
+
+            _initialized = true;
         }
     }
 }
