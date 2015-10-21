@@ -54,7 +54,7 @@
         {
             get
             {
-                return _sourceValue != null && _sourceValue.IsValueCreated
+                return _sourceValue != null
                     ? _sourceValue.Value
                     : _rawValue;
             }
@@ -94,7 +94,7 @@
         {
             get
             {
-                return _objectValue != null && _objectValue.IsValueCreated
+                return _objectValue != null
                     ? _objectValue.Value
                     : _rawValue;
             }
@@ -104,7 +104,7 @@
         {
             get
             {
-                return _xpathValue != null && _xpathValue.IsValueCreated
+                return _xpathValue != null
                     ? _xpathValue.Value
                     : _rawValue;
             }
@@ -112,7 +112,7 @@
 
         private PublishedPropertyType CreateDummyPropertyType()
         {
-            if (PropertyValueConvertersResolver.Current == null)
+            if (!PropertyValueConvertersResolver.HasCurrent)
             {
                 return null;
             }

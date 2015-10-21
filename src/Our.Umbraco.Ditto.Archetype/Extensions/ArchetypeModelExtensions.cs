@@ -8,7 +8,7 @@
 
     public static class ArchetypeModelExtensions
     {
-        public static T As<T>(
+        public static IEnumerable<T> As<T>(
             this ArchetypeModel archetype,
             CultureInfo culture = null,
             IEnumerable<DittoValueResolverContext> valueResolverContexts = null,
@@ -16,10 +16,10 @@
             Action<DittoConversionHandlerContext> onConverted = null)
             where T : class
         {
-            return archetype.As(typeof(T), culture, valueResolverContexts, onConverting, onConverted) as T;
+            return archetype.As(typeof(T), culture, valueResolverContexts, onConverting, onConverted) as IEnumerable<T>;
         }
 
-        public static object As(
+        public static IEnumerable<object> As(
             this ArchetypeModel archetype,
             Type type,
             CultureInfo culture = null,
