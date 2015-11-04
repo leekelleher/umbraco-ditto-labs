@@ -18,7 +18,7 @@ Exploring a way to enable Ditto to map `ArchetypeModel` and `ArchetypeFieldsetMo
 
 The approach our experiment has taken is to convert an `ArchetypeFieldsetModel` into an `IPublishedContent`, then apply Ditto's `.As<T>` method in typical usage.
 
-> *Note:* Given the success of this experiment, we are looking to submit this as a pull-request to the [Archetype](https://github.com/imulus/Archetype/issues/302) core codebase!
+> *Note:* Given the success of this experiment, we have submitted [a pull-request to the Archetype core](https://github.com/imulus/Archetype/pull/303) codebase!
 
 ---
 
