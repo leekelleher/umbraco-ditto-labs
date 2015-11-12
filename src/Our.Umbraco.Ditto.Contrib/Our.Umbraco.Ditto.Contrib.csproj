@@ -242,6 +242,7 @@
   <ItemGroup>
     <Compile Include="Common\RelationDirection.cs" />
     <Compile Include="ComponentModel\Attributes\UmbracoRelationAttribute.cs" />
+    <Compile Include="ComponentModel\TypeConverters\UmbracoRelationConverter.cs" />
     <Compile Include="ComponentModel\ValueResolvers\UmbracoRelationResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
