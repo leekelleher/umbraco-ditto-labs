@@ -240,15 +240,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\RelationDirection.cs" />
+    <Compile Include="ComponentModel\Attributes\UmbracoRelationAttribute.cs" />
+    <Compile Include="ComponentModel\ValueResolvers\UmbracoRelationResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ComponentModel\ValueResolvers\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
