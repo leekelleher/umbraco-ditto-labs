@@ -9,6 +9,7 @@ All code is licensed under the [MIT License](LICENSE.md).
 
 So far we have experiments with:
 
+* [Community Contrib](https://github.com/leekelleher/umbraco-ditto-labs/tree/develop/src/Our.Umbraco.Ditto.Contrib)
 * [Umbraco's Model Factory](https://github.com/leekelleher/umbraco-ditto-labs/tree/develop/src/Our.Umbraco.Ditto.ModelFactory)
 * [Archetype](https://github.com/leekelleher/umbraco-ditto-labs/tree/develop/src/Our.Umbraco.Ditto.Archetype)
 

@@ -4,6 +4,12 @@ Here are some things that we're experimenting with...
 
 ---
 
+## Community Contrib
+
+Community contributed set of custom ValueResolvers and TypeConverters that re-use other areas of the Umbraco core, such as Membership helpers and Relations.
+
+---
+
 ## Ditto ModelFactory
 
 > The Ditto ModelFactory was originally part of the main [Ditto source-code repository](https://github.com/leekelleher/umbraco-ditto/).
@@ -24,7 +30,6 @@ The approach our experiment has taken is to convert an `ArchetypeFieldsetModel` 
 
 # Future ideas
 
-Here are a few other ideas where we would like to experiment using Ditto.
+Here are other areas that we would like to experiment with using Ditto.
 
-* **Contrib project** - a series of custom ValueResolvers and TypeConverters that re-use other areas of the Umbraco core, such as Membership helpers and Relations.
 * **Merchello** - taking from the learnings of a recent [Merchello/Ditto workshop](https://github.com/BarryFogarty/Merchello.UkFest.Workshop) implementation, we'd explore developing re-usable components.
