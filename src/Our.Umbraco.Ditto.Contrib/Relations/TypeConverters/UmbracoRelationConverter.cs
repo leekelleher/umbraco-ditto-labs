@@ -17,6 +17,11 @@
 			return typeof(IPublishedContent).IsAssignableFrom(destinationType);
 		}
 
+		public override object ConvertTo(ITypeDescriptorContext context, CultureInfo culture, object value, Type destinationType)
+		{
+			return base.ConvertTo(context, culture, value, destinationType);
+		}
+
 		public override object ConvertFrom(ITypeDescriptorContext context, CultureInfo culture, object value)
 		{
 			if (context == null || context.PropertyDescriptor == null || value == null)
