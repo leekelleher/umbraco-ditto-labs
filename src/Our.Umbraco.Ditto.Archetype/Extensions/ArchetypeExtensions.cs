@@ -3,10 +3,10 @@
     using System;
     using System.Collections.Generic;
     using System.Globalization;
+    using Archetype.Extensions;
     using Archetype.Models;
-    using global::Umbraco.Core.Models;
 
-    public static class ArchetypeModelExtensions
+    public static class ArchetypeExtensions
     {
         public static IEnumerable<T> As<T>(
             this ArchetypeModel archetype,
@@ -35,9 +35,33 @@
             return archetype.ToPublishedContentSet().As(type, culture, valueResolverContexts, onConverting, onConverted);
         }
 
-        public static IEnumerable<IPublishedContent> ToPublishedContentSet(this ArchetypeModel archetype)
+        public static T As<T>(
+           this ArchetypeFieldsetModel fieldset,
+           CultureInfo culture = null,
+           object instance = null,
+           IEnumerable<DittoValueResolverContext> valueResolverContexts = null,
+           Action<DittoConversionHandlerContext> onConverting = null,
+           Action<DittoConversionHandlerContext> onConverted = null)
+           where T : class
         {
-            return new ArchetypePublishedContentSet(archetype);
+            return fieldset.As(typeof(T), culture, instance, valueResolverContexts, onConverting, onConverted) as T;
+        }
+
+        public static object As(
+            this ArchetypeFieldsetModel fieldset,
+            Type type,
+            CultureInfo culture = null,
+            object instance = null,
+            IEnumerable<DittoValueResolverContext> valueResolverContexts = null,
+            Action<DittoConversionHandlerContext> onConverting = null,
+            Action<DittoConversionHandlerContext> onConverted = null)
+        {
+            if (fieldset == null)
+            {
+                return null;
+            }
+
+            return fieldset.ToPublishedContent().As(type, culture, instance, valueResolverContexts, onConverting, onConverted);
         }
     }
 }

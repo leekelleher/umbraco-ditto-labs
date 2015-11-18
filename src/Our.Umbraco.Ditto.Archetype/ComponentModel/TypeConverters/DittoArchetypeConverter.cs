@@ -3,6 +3,7 @@
     using System;
     using System.ComponentModel;
     using System.Globalization;
+    using Archetype.Extensions;
     using Archetype.Models;
 
     public class DittoArchetypeConverter : TypeConverter
@@ -25,12 +26,12 @@
 
                 if (value is ArchetypeModel)
                 {
-                    return ((ArchetypeModel)value).As(propertyType, culture);
+                    return ((ArchetypeModel)value).ToPublishedContentSet().As(propertyType, culture);
                 }
 
                 if (value is ArchetypeFieldsetModel)
                 {
-                    return ((ArchetypeFieldsetModel)value).As(propertyType, culture);
+                    return ((ArchetypeFieldsetModel)value).ToPublishedContent().As(propertyType, culture);
                 }
             }
 
