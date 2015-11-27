@@ -3,6 +3,7 @@
     using System;
     using System.ComponentModel;
     using System.Globalization;
+    using System.Linq;
     using Archetype.Extensions;
     using Archetype.Models;
 
@@ -23,15 +24,19 @@
             if (context != null && context.PropertyDescriptor != null)
             {
                 var propertyType = context.PropertyDescriptor.PropertyType;
+                var isGenericType = propertyType.IsGenericType;
+                var targetType = isGenericType
+                    ? propertyType.GenericTypeArguments.First()
+                    : propertyType;
 
                 if (value is ArchetypeModel)
                 {
-                    return ((ArchetypeModel)value).ToPublishedContentSet().As(propertyType, culture);
+                    return ((ArchetypeModel)value).ToPublishedContentSet().As(targetType, culture);
                 }
 
                 if (value is ArchetypeFieldsetModel)
                 {
-                    return ((ArchetypeFieldsetModel)value).ToPublishedContent().As(propertyType, culture);
+                    return ((ArchetypeFieldsetModel)value).ToPublishedContent().As(targetType, culture);
                 }
             }
 
