@@ -20,11 +20,22 @@ Community contributed set of custom ValueResolvers and TypeConverters that re-us
 
 ## Ditto for Archetype
 
-Exploring a way to enable Ditto to map `ArchetypeModel` and `ArchetypeFieldsetModel` objects to a POCO/model.
+Since having our [pull-request accepted in the Archetype core](https://github.com/imulus/Archetype/pull/303) codebase, we can now easily use Ditto to map Archetype data.
 
-The approach our experiment has taken is to convert an `ArchetypeFieldsetModel` into an `IPublishedContent`, then apply Ditto's `.As<T>` method in typical usage.
+The regular usage would be...
 
-> *Note:* Given the success of this experiment, we have submitted [a pull-request to the Archetype core](https://github.com/imulus/Archetype/pull/303) codebase!
+    @Model.Content.GetPropertyValue<ArchetypeModel>("alias").ToPublishedContentSet().As<MyModel>();
+
+This labs repo offers custom extension methods and TypeConverter to help make mapping simpler.
+
+    @Model.Content.GetPropertyValue<ArchetypeModel>("alias").As<MyModel>();
+
+or
+
+```csharp
+[TypeConverter(typeof(DittoArchetypeConverter))]
+public MyModel MyProperty { get; set; }
+```
 
 ---
 
