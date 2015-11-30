@@ -33,3 +33,4 @@ The approach our experiment has taken is to convert an `ArchetypeFieldsetModel` 
 Here are other areas that we would like to experiment with using Ditto.
 
 * **Merchello** - taking from the learnings of a recent [Merchello/Ditto workshop](https://github.com/BarryFogarty/Merchello.UkFest.Workshop) implementation, we'd explore developing re-usable components.
+* **Vorto** - see example gist by @JimBobSquarePants - https://gist.github.com/JimBobSquarePants/80762a1233bbb112689e
