@@ -7,7 +7,7 @@
     <ProjectGuid>{4AF5DC3A-26DE-407F-8F42-8CEDD2C1ED4E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Our.Umbraco.Ditto.Contrib</RootNamespace>
+    <RootNamespace>Our.Umbraco.Ditto</RootNamespace>
     <AssemblyName>Our.Umbraco.Ditto.Contrib</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -240,6 +240,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Relations\RelationDirection.cs" />
+    <Compile Include="Relations\Attributes\UmbracoRelationAttribute.cs" />
+    <Compile Include="Relations\TypeConverters\UmbracoRelationConverter.cs" />
+    <Compile Include="Relations\ValueResolvers\UmbracoRelationResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -247,7 +251,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="ComponentModel\ValueResolvers\" />
+    <Folder Include="ComponentModel\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
