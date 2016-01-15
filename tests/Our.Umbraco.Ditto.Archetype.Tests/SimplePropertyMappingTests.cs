@@ -33,8 +33,8 @@
         [Test]
         public void Simple_Property_Mapped()
         {
-            var property = new Contrib.PublishedPropertyMock("myProperty", _archetype, true);
-            var content = new Contrib.PublishedContentMock { Properties = new[] { property } };
+            var property = new Shared.Mocks.PublishedPropertyMock("myProperty", _archetype, true);
+            var content = new Shared.Mocks.PublishedContentMock { Properties = new[] { property } };
 
             var model = content.As<MyModel>();
 

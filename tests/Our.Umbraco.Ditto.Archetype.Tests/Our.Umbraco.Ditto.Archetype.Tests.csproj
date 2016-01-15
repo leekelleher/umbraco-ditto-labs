@@ -242,15 +242,14 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\tests\Our.Umbraco.Ditto.Contrib.Tests\Our.Umbraco.Ditto.Contrib.Tests.csproj">
-      <Project>{20366b42-b010-447c-8b02-7d949c80487d}</Project>
-      <Name>Our.Umbraco.Ditto.Contrib.Tests</Name>
-      <Private>True</Private>
-    </ProjectReference>
     <ProjectReference Include="..\..\src\Our.Umbraco.Ditto.Archetype\Our.Umbraco.Ditto.Archetype.csproj">
       <Project>{6c5d5b08-c390-4d15-b7fc-4da82485e97a}</Project>
       <Name>Our.Umbraco.Ditto.Archetype</Name>
       <Private>True</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Our.Umbraco.Ditto.Shared\Our.Umbraco.Ditto.Shared.csproj">
+      <Project>{73232d78-0e53-4977-8af8-da2f13fd21fb}</Project>
+      <Name>Our.Umbraco.Ditto.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

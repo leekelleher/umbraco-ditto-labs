@@ -1,4 +1,4 @@
-﻿namespace Our.Umbraco.Ditto.Contrib
+﻿namespace Our.Umbraco.Ditto.Shared.Mocks
 {
     using System;
     using System.Collections.Generic;

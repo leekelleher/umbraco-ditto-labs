@@ -16,8 +16,8 @@
         {
             var archetype = new ArchetypeModel();
 
-            var property = new Contrib.PublishedPropertyMock("myProperty", archetype, true);
-            var content = new Contrib.PublishedContentMock { Properties = new[] { property } };
+            var property = new Shared.Mocks.PublishedPropertyMock("myProperty", archetype, true);
+            var content = new Shared.Mocks.PublishedContentMock { Properties = new[] { property } };
 
             var model = content.As<BasicModel>();
 
