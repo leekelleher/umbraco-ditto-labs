@@ -21,7 +21,7 @@
 
         public class MyModel
         {
-            [TypeConverter(typeof(DittoArchetypeConverter))]
+            [DittoArchetype()]
             public SimpleModel MyProperty { get; set; }
         }
 

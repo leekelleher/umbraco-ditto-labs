@@ -44,9 +44,9 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.5\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Our.Umbraco.Ditto, Version=0.8.5746.20658, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Our.Umbraco.Ditto.0.8.3\lib\net45\Our.Umbraco.Ditto.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="Our.Umbraco.Ditto, Version=0.9.5854.31093, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Our.Umbraco.Ditto.0.9.0-alpha-000467\lib\net45\Our.Umbraco.Ditto.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -64,7 +64,7 @@
   <ItemGroup>
     <Compile Include="Extensions\ArchetypeExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ComponentModel\TypeConverters\DittoArchetypeConverter.cs" />
+    <Compile Include="ComponentModel\Processors\DittoArchetypeAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
