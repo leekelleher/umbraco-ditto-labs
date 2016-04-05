@@ -1,4 +1,4 @@
-# `IPublishedContent` Model Factory
+# Ditto Labs - `IPublishedContent` Model Factory
 
 > **Warning:** The Model Factory implementation for Ditto should be considered as a prototype / proof-of-concept. You will receive limited support (from the Ditto team) if you choose to use it.
 
@@ -34,7 +34,7 @@ public class ConfigurePublishedContentModelFactory : ApplicationEventHandler
 
 The factory will look for any POCO models that inherit from the `PublishedContentModel` class and automatically map those to the requested `IPublishedContent` objects.
 
-> **Warning:** If you have a POCO model that contains a reference to a child node, then this may create a circular-reference and cause the model-factory to enter an endless loop!  This is fixable by marking your property with the `virtual` keyword, as this enables the [lazy-loading feature](usage-advanced-lazyloading).
+> **Warning:** If you have a POCO model that contains a reference to a child node, then this may create a circular-reference and cause the model-factory to enter an endless loop!  This is fixable by marking your property with the `virtual` keyword, as this enables the lazy-loading feature.
 
 
 ## Video demonstrations
