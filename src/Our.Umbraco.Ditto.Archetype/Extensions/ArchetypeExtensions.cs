@@ -11,19 +11,19 @@
         public static IEnumerable<T> As<T>(
             this ArchetypeModel archetype,
             CultureInfo culture = null,
-            IEnumerable<DittoValueResolverContext> valueResolverContexts = null,
+            IEnumerable<DittoProcessorContext> processorContexts = null,
             Action<DittoConversionHandlerContext> onConverting = null,
             Action<DittoConversionHandlerContext> onConverted = null)
             where T : class
         {
-            return archetype.As(typeof(T), culture, valueResolverContexts, onConverting, onConverted) as IEnumerable<T>;
+            return archetype.As(typeof(T), culture, processorContexts, onConverting, onConverted) as IEnumerable<T>;
         }
 
         public static IEnumerable<object> As(
             this ArchetypeModel archetype,
             Type type,
             CultureInfo culture = null,
-            IEnumerable<DittoValueResolverContext> valueResolverContexts = null,
+            IEnumerable<DittoProcessorContext> processorContexts = null,
             Action<DittoConversionHandlerContext> onConverting = null,
             Action<DittoConversionHandlerContext> onConverted = null)
         {
@@ -32,19 +32,19 @@
                 return null;
             }
 
-            return archetype.ToPublishedContentSet().As(type, culture, valueResolverContexts, onConverting, onConverted);
+            return archetype.ToPublishedContentSet().As(type, culture, processorContexts, onConverting, onConverted);
         }
 
         public static T As<T>(
            this ArchetypeFieldsetModel fieldset,
            CultureInfo culture = null,
            object instance = null,
-           IEnumerable<DittoValueResolverContext> valueResolverContexts = null,
+           IEnumerable<DittoProcessorContext> processorContexts = null,
            Action<DittoConversionHandlerContext> onConverting = null,
            Action<DittoConversionHandlerContext> onConverted = null)
            where T : class
         {
-            return fieldset.As(typeof(T), culture, instance, valueResolverContexts, onConverting, onConverted) as T;
+            return fieldset.As(typeof(T), culture, instance, processorContexts, onConverting, onConverted) as T;
         }
 
         public static object As(
@@ -52,7 +52,7 @@
             Type type,
             CultureInfo culture = null,
             object instance = null,
-            IEnumerable<DittoValueResolverContext> valueResolverContexts = null,
+            IEnumerable<DittoProcessorContext> processorContexts = null,
             Action<DittoConversionHandlerContext> onConverting = null,
             Action<DittoConversionHandlerContext> onConverted = null)
         {
@@ -61,7 +61,7 @@
                 return null;
             }
 
-            return fieldset.ToPublishedContent().As(type, culture, instance, valueResolverContexts, onConverting, onConverted);
+            return fieldset.ToPublishedContent().As(type, culture, instance, processorContexts, onConverting, onConverted);
         }
     }
 }
