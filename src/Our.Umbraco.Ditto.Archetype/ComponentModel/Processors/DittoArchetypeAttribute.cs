@@ -1,9 +1,9 @@
-﻿namespace Our.Umbraco.Ditto
-{
-    using System.Linq;
-    using Archetype.Models;
-    using global::Umbraco.Core.Models;
+﻿using Archetype.Models;
+using Archetype.Extensions;
+using Umbraco.Core.Models;
 
+namespace Our.Umbraco.Ditto
+{
     public class DittoArchetypeAttribute : UmbracoPropertyAttribute
     {
         public DittoArchetypeAttribute()
@@ -27,23 +27,14 @@
                 value = base.ProcessValue();
             }
 
-            if (Context != null && Context.PropertyDescriptor != null)
+            if (value is ArchetypeModel)
             {
-                var propertyType = Context.PropertyDescriptor.PropertyType;
-                var isGenericType = propertyType.IsGenericType;
-                var targetType = isGenericType
-                    ? propertyType.GenericTypeArguments.First()
-                    : propertyType;
+                return ((ArchetypeModel)value).ToPublishedContentSet();
+            }
 
-                if (value is ArchetypeModel)
-                {
-                    return ((ArchetypeModel)value).As(targetType, Context.Culture);
-                }
-
-                if (value is ArchetypeFieldsetModel)
-                {
-                    return ((ArchetypeFieldsetModel)value).As(targetType, Context.Culture);
-                }
+            if (value is ArchetypeFieldsetModel)
+            {
+                return ((ArchetypeFieldsetModel)value).ToPublishedContent();
             }
 
             return value;

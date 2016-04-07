@@ -1,10 +1,9 @@
-﻿namespace Our.Umbraco.Ditto.Archetype.Tests
-{
-    using System.ComponentModel;
-    using global::Archetype.Models;
-    using global::Archetype.PropertyConverters;
-    using NUnit.Framework;
+﻿using Archetype.Models;
+using Archetype.PropertyConverters;
+using NUnit.Framework;
 
+namespace Our.Umbraco.Ditto.Archetype.Tests
+{
     [TestFixture]
     public class SimplePropertyMappingTests
     {

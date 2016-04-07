@@ -1,11 +1,11 @@
-﻿namespace Our.Umbraco.Ditto
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Globalization;
-    using Archetype.Extensions;
-    using Archetype.Models;
+﻿using System;
+using System.Collections.Generic;
+using System.Globalization;
+using Archetype.Extensions;
+using Archetype.Models;
 
+namespace Our.Umbraco.Ditto
+{
     public static class ArchetypeExtensions
     {
         public static IEnumerable<T> As<T>(

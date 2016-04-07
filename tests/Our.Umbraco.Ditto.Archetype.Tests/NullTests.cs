@@ -1,8 +1,8 @@
-﻿namespace Our.Umbraco.Ditto.Archetype.Tests
-{
-    using global::Archetype.Models;
-    using NUnit.Framework;
+﻿using Archetype.Models;
+using NUnit.Framework;
 
+namespace Our.Umbraco.Ditto.Archetype.Tests
+{
     [TestFixture]
     public class NullTests
     {

@@ -1,10 +1,10 @@
-﻿namespace Our.Umbraco.Ditto.Archetype.Tests
-{
-    using System.Linq;
-    using global::Archetype.Models;
-    using global::Archetype.PropertyConverters;
-    using NUnit.Framework;
+﻿using System.Linq;
+using Archetype.Models;
+using Archetype.PropertyConverters;
+using NUnit.Framework;
 
+namespace Our.Umbraco.Ditto.Archetype.Tests
+{
     [TestFixture]
     public class FieldsetMappingTests
     {

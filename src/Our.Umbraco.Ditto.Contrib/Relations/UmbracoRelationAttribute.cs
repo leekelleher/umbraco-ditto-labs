@@ -9,7 +9,7 @@ namespace Our.Umbraco.Ditto
     // TODO: [LK] Consider using `DittoMultiProcessor` to wrap this processor and the `UmbracoPicker` one,
     // saves trying to handle the responsibility of `int` => `IPublishedContent`
 
-    [DittoProcessorMetaData(ContextType = typeof(UmbracoRelationProcessorContext))]
+    [DittoProcessorMetaData(ContextType = typeof(UmbracoRelationProcessorContext), ValueType = typeof(IPublishedContent))]
     public class UmbracoRelationAttribute : DittoProcessorAttribute
     {
         public UmbracoRelationAttribute()
