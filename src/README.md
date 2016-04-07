@@ -14,8 +14,6 @@ Community contributed set of custom ValueResolvers and TypeConverters that re-us
 
 > The Ditto ModelFactory was originally part of the main [Ditto source-code repository](https://github.com/leekelleher/umbraco-ditto/).
 
-[The original documentation can be found here](http://umbraco-ditto.readthedocs.org/en/latest/publishedcontentmodelfactory/).
-
 ---
 
 ## Ditto for Archetype
@@ -33,7 +31,7 @@ This labs repo offers custom extension methods and TypeConverter to help make ma
 or
 
 ```csharp
-[TypeConverter(typeof(DittoArchetypeConverter))]
+[DittoArchetype]
 public MyModel MyProperty { get; set; }
 ```
 
