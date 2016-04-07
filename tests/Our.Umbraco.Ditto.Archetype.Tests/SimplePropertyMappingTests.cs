@@ -21,7 +21,7 @@
 
         public class MyModel
         {
-            [DittoArchetype()]
+            [DittoArchetype]
             public SimpleModel MyProperty { get; set; }
         }
 

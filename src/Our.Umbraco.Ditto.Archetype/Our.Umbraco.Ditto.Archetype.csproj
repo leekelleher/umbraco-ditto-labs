@@ -46,6 +46,7 @@
     </Reference>
     <Reference Include="Our.Umbraco.Ditto, Version=0.9.5854.31093, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Our.Umbraco.Ditto.0.9.0-alpha-000467\lib\net45\Our.Umbraco.Ditto.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
