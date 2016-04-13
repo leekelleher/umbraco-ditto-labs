@@ -243,9 +243,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Relations\RelationDirection.cs" />
+    <Compile Include="Relations\UmbracoRelationProcessorAttribute.cs" />
     <Compile Include="Relations\UmbracoRelationAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Relations\UmbracoRelationProcessorContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

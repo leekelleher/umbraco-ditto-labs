@@ -2,7 +2,9 @@
 using System.Linq;
 using NUnit.Framework;
 using Our.Umbraco.Ditto.Contrib.Tests.Mocks;
+using Umbraco.Core;
 using Umbraco.Core.Models;
+using Umbraco.Core.Services;
 
 namespace Our.Umbraco.Ditto.Contrib
 {
@@ -10,18 +12,15 @@ namespace Our.Umbraco.Ditto.Contrib
     public class UmbracoRelationProcessorTests
     {
         private IPublishedContent Content;
-        private UmbracoRelationProcessorContext RelationContext;
 
         [TestFixtureSetUp]
         public void Init()
         {
-            Content = new MockPublishedContent { Id = 8001 };
+            var serviceContext = new ServiceContext(null, null, null, null, null, null, null, null, new MockRelationService(), null, null, null, null);
+            var appContext = new ApplicationContext(new DatabaseContext(null), serviceContext, new CacheHelper());
+            ApplicationContext.EnsureContext(appContext, true);
 
-            RelationContext = new UmbracoRelationProcessorContext
-            {
-                RelationService = new MockRelationService(),
-                GetById = (x) => new MockPublishedContent { Id = x }
-            };
+            Content = new MockPublishedContent { Id = 8001 };
         }
 
         public class MyModel<T>
@@ -38,7 +37,7 @@ namespace Our.Umbraco.Ditto.Contrib
         [Test]
         public void UmbracoRelations_Resolves()
         {
-            var model = Content.As<MyModel<IPublishedContent>>(processorContexts: new[] { RelationContext });
+            var model = Content.As<MyModel<IPublishedContent>>();
 
             Assert.IsNotNull(model.RelatedItems);
             Assert.IsInstanceOf<IEnumerable<IPublishedContent>>(model.RelatedItems);
@@ -48,7 +47,7 @@ namespace Our.Umbraco.Ditto.Contrib
         [Test]
         public void UmbracoRelations_Resolves_As_Typed()
         {
-            var model = Content.As<MyModel<MyRelatedModel>>(processorContexts: new[] { RelationContext });
+            var model = Content.As<MyModel<MyRelatedModel>>();
 
             Assert.IsNotNull(model.RelatedItems);
             Assert.IsInstanceOf<IEnumerable<MyRelatedModel>>(model.RelatedItems);
