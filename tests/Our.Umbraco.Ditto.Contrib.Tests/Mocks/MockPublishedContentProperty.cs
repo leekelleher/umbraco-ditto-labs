@@ -3,7 +3,7 @@ using Umbraco.Core.Models;
 
 namespace Our.Umbraco.Ditto.Contrib.Tests.Mocks
 {
-    public class MockPublishedContentProperty : IPublishedContentProperty
+    public class MockPublishedContentProperty : IPublishedProperty
     {
         public MockPublishedContentProperty()
         {

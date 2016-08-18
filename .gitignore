@@ -1,4 +1,5 @@
 _ReSharper.*
+[Aa]pp_[Dd]ata/
 [Bb]in/
 [Oo]bj/
 *.suo

@@ -116,6 +116,11 @@ namespace Our.Umbraco.Ditto.Contrib.Tests.Mocks
             yield return new Relation(9003, 8003, relationType);
         }
 
+        public IEnumerable<IRelation> GetByParentOrChildId(int id, string relationTypeAlias)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<IRelation> GetByRelationTypeAlias(string relationTypeAlias)
         {
             throw new NotImplementedException();
