@@ -13,7 +13,9 @@ namespace Our.Umbraco.Ditto
             : this(string.Empty, RelationDirection.ChildToParent)
         { }
 
-        public UmbracoRelationProcessorAttribute(string relationTypeAlias, RelationDirection relationDirection = RelationDirection.ChildToParent)
+        public UmbracoRelationProcessorAttribute(
+            string relationTypeAlias,
+            RelationDirection relationDirection = RelationDirection.ChildToParent)
         {
             this.RelationDirection = relationDirection;
             this.RelationTypeAlias = relationTypeAlias;
