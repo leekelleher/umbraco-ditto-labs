@@ -3,14 +3,14 @@
     using System;
     using global::Umbraco.Core.Models;
 
-    public class PublishedPropertyMock : IPublishedProperty
+    public class MockPublishedProperty : IPublishedProperty
     {
-        public PublishedPropertyMock()
+        public MockPublishedProperty()
              : this("alias", null, true)
         {
         }
 
-        public PublishedPropertyMock(string alias, object value, bool hasValue)
+        public MockPublishedProperty(string alias, object value, bool hasValue)
         {
             HasValue = hasValue;
             PropertyTypeAlias = alias;

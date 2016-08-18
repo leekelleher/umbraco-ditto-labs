@@ -3,19 +3,19 @@ using Umbraco.Core.Models;
 
 namespace Our.Umbraco.Ditto.Contrib.Tests.Mocks
 {
-    public class MockPublishedContentProperty : IPublishedProperty
+    public class MockPublishedProperty : IPublishedProperty
     {
-        public MockPublishedContentProperty()
+        public MockPublishedProperty()
         {
             HasValue = true;
-            Alias = "alias";
+            PropertyTypeAlias = "alias";
             Value = null;
         }
 
-        public MockPublishedContentProperty(string alias, object value, bool hasValue)
+        public MockPublishedProperty(string alias, object value, bool hasValue)
         {
             HasValue = hasValue;
-            Alias = alias;
+            PropertyTypeAlias = alias;
             Value = value;
         }
 
@@ -28,8 +28,6 @@ namespace Our.Umbraco.Ditto.Contrib.Tests.Mocks
         public object Value { get; set; }
 
         public object XPathValue { get; set; }
-
-        public string Alias { get; set; }
 
         public Guid Version { get; set; }
     }

@@ -1,15 +1,22 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Security;
 using Moq;
 using NUnit.Framework;
 using Our.Umbraco.Ditto.Contrib.Tests.Mocks;
 using Umbraco.Core;
+using Umbraco.Core.Cache;
+using Umbraco.Core.Configuration.UmbracoSettings;
+using Umbraco.Core.Logging;
 using Umbraco.Core.Models;
 using Umbraco.Core.ObjectResolution;
+using Umbraco.Core.Profiling;
 using Umbraco.Core.Services;
 using Umbraco.Web;
 using Umbraco.Web.PublishedCache;
+using Umbraco.Web.Routing;
+using Umbraco.Web.Security;
 
 namespace Our.Umbraco.Ditto.Contrib
 {
@@ -21,8 +28,13 @@ namespace Our.Umbraco.Ditto.Contrib
         [TestFixtureSetUp]
         public void Init()
         {
+
+
             var serviceContext = new ServiceContext(null, null, null, null, null, null, null, null, new MockRelationService(), null, null, null, null);
-            var appContext = new ApplicationContext(new DatabaseContext(null), serviceContext, new CacheHelper());
+            var cacheHelper = CacheHelper.CreateDisabledCacheHelper();
+            var logger = new ProfilingLogger(Mock.Of<ILogger>(), Mock.Of<IProfiler>());
+
+            var appContext = new ApplicationContext(cacheHelper, logger) { Services = serviceContext };
             ApplicationContext.EnsureContext(appContext, true);
 
             if (!PublishedCachesResolver.HasCurrent)
@@ -40,7 +52,12 @@ namespace Our.Umbraco.Ditto.Contrib
             UmbracoContext.EnsureContext(
                 httpContext: Mock.Of<HttpContextBase>(),
                 applicationContext: appContext,
+                webSecurity: new Mock<WebSecurity>(null, null).Object,
+                umbracoSettings: Mock.Of<IUmbracoSettingsSection>(),
+                urlProviders: Enumerable.Empty<IUrlProvider>(),
                 replaceContext: true);
+
+            UmbracoPickerHelper.GetMembershipHelper = (ctx) => new MembershipHelper(ctx, Mock.Of<MembershipProvider>(), Mock.Of<RoleProvider>());
 
             Resolution.Freeze();
 

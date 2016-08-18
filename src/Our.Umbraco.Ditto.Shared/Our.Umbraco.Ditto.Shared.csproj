@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Our.Umbraco.Ditto.Shared</RootNamespace>
-    <AssemblyName>Our.Umbraco.Ditto.Shared</AssemblyName>
+    <AssemblyName>Umbraco.Extensions</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -237,8 +237,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mocks\PublishedContentMock.cs" />
-    <Compile Include="Mocks\PublishedPropertyMock.cs" />
+    <Compile Include="Mocks\MockLogger.cs" />
+    <Compile Include="Mocks\MockPublishedContent.cs" />
+    <Compile Include="Mocks\MockPublishedProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -202,6 +202,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\src\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
       <Private>True</Private>
@@ -305,7 +306,7 @@
     <Compile Include="AggregateValuesTests.cs" />
     <Compile Include="Mocks\MockRelationService.cs" />
     <Compile Include="Mocks\MockPublishedContent.cs" />
-    <Compile Include="Mocks\MockPublishedContentProperty.cs" />
+    <Compile Include="Mocks\MockPublishedProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UmbracoRelationProcessorTests.cs" />
   </ItemGroup>

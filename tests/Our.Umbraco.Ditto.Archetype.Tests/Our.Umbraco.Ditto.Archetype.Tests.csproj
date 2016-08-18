@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Our.Umbraco.Ditto.Archetype.Tests</RootNamespace>
-    <AssemblyName>Our.Umbraco.Ditto.Archetype.Tests</AssemblyName>
+    <AssemblyName>Umbraco.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
@@ -289,6 +289,7 @@
     <Compile Include="SimplePropertyMappingTests.cs" />
     <Compile Include="NullTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="__SetupTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Our.Umbraco.Ditto.Archetype\Our.Umbraco.Ditto.Archetype.csproj">

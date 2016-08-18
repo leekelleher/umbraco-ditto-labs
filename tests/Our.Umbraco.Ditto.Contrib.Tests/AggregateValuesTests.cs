@@ -37,19 +37,19 @@ namespace Our.Umbraco.Ditto.Contrib
 
             var level1 = new MockPublishedContent
             {
-                Properties = new[] { new MockPublishedContentProperty(PropertyNameAlias, this.Values[0], true) }
+                Properties = new[] { new MockPublishedProperty(PropertyNameAlias, this.Values[0], true) }
             };
 
             var level2 = new MockPublishedContent
             {
                 Parent = level1,
-                Properties = new[] { new MockPublishedContentProperty(PropertyNameAlias, this.Values[1], true) }
+                Properties = new[] { new MockPublishedProperty(PropertyNameAlias, this.Values[1], true) }
             };
 
             var level3 = new MockPublishedContent
             {
                 Parent = level2,
-                Properties = new[] { new MockPublishedContentProperty(PropertyNameAlias, this.Values[2], true) }
+                Properties = new[] { new MockPublishedProperty(PropertyNameAlias, this.Values[2], true) }
             };
 
             this.Content = level3;

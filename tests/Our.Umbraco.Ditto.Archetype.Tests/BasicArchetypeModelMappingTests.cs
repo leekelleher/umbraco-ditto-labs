@@ -16,8 +16,8 @@ namespace Our.Umbraco.Ditto.Archetype.Tests
         {
             var archetype = new ArchetypeModel();
 
-            var property = new Shared.Mocks.PublishedPropertyMock("myProperty", archetype, true);
-            var content = new Shared.Mocks.PublishedContentMock { Properties = new[] { property } };
+            var property = new Shared.Mocks.MockPublishedProperty("myProperty", archetype, true);
+            var content = new Shared.Mocks.MockPublishedContent { Properties = new[] { property } };
 
             var model = content.As<BasicModel>();
 
