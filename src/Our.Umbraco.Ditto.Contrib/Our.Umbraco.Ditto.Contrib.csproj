@@ -242,6 +242,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Aggregation\AggregateValues.cs" />
     <Compile Include="Relations\RelationDirection.cs" />
     <Compile Include="Relations\UmbracoRelationProcessorAttribute.cs" />
     <Compile Include="Relations\UmbracoRelationAttribute.cs" />

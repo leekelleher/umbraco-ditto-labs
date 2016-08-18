@@ -272,6 +272,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregateValuesTests.cs" />
     <Compile Include="Mocks\MockRelationService.cs" />
     <Compile Include="Mocks\MockPublishedContent.cs" />
     <Compile Include="Mocks\MockPublishedContentProperty.cs" />
