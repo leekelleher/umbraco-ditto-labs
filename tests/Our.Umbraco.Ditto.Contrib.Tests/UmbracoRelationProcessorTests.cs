@@ -28,8 +28,6 @@ namespace Our.Umbraco.Ditto.Contrib
         [TestFixtureSetUp]
         public void Init()
         {
-
-
             var serviceContext = new ServiceContext(null, null, null, null, null, null, null, null, new MockRelationService(), null, null, null, null);
             var cacheHelper = CacheHelper.CreateDisabledCacheHelper();
             var logger = new ProfilingLogger(Mock.Of<ILogger>(), Mock.Of<IProfiler>());
