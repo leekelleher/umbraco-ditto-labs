@@ -308,6 +308,7 @@
     <Compile Include="Mocks\MockPublishedContent.cs" />
     <Compile Include="Mocks\MockPublishedProperty.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ChildrenAsTests.cs" />
     <Compile Include="UmbracoRelationProcessorTests.cs" />
   </ItemGroup>
   <ItemGroup>
