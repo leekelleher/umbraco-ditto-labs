@@ -1,14 +1,15 @@
-﻿using Umbraco.Core;
+﻿using System.Linq;
+using Umbraco.Core;
 
 namespace Our.Umbraco.Ditto
 {
-    public class PublishedContentByDocumentTypeAlias : PublishedContentFilter
+    internal class PublishedContentByDocumentTypeAlias : PublishedContentFilter
     {
-        public PublishedContentByDocumentTypeAlias(string documentTypeAlias = null)
+        public PublishedContentByDocumentTypeAlias(params string[] documentTypeAliases)
         {
-            if (!string.IsNullOrWhiteSpace(documentTypeAlias))
+            if (documentTypeAliases != null && documentTypeAliases.Any())
             {
-                Filter = x => x.DocumentTypeAlias.InvariantEquals(documentTypeAlias);
+                Filter = x => documentTypeAliases.InvariantContains(x.DocumentTypeAlias);
             }
         }
     }

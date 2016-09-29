@@ -6,7 +6,7 @@ using Umbraco.Web;
 
 namespace Our.Umbraco.Ditto
 {
-    public abstract class PublishedContentFilter : DittoProcessorAttribute
+    internal abstract class PublishedContentFilter : DittoProcessorAttribute
     {
         protected Func<IPublishedContent, bool> Filter { get; set; }
 
