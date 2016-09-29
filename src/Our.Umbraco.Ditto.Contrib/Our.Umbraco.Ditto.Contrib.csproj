@@ -277,10 +277,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Aggregation\AggregateValues.cs" />
+    <Compile Include="Collections\PublishedContentByDocumentTypeAlias.cs" />
+    <Compile Include="Collections\ChildrenAs.cs" />
     <Compile Include="Relations\RelationDirection.cs" />
     <Compile Include="Relations\UmbracoRelationProcessorAttribute.cs" />
     <Compile Include="Relations\UmbracoRelationAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Collections\PublishedContentFilter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
