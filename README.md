@@ -29,7 +29,7 @@ Anyone and everyone is welcome to contribute. Please take a moment to review the
 Have a question?
 
 * [Raise an issue](https://github.com/leekelleher/umbraco-ditto-labs/issues) on GitHub
-* [Tweet me](https://github.com/leekelleher) on Twitter
+* [Tweet me](https://twitter.com/leekelleher) on Twitter
 * [Ditto Forum](http://our.umbraco.org/projects/developer-tools/ditto/ditto-feedback/) on Our Umbraco
 
 
