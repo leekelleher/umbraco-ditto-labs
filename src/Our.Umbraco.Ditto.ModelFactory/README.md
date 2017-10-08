@@ -1,6 +1,6 @@
 # Ditto Labs - `IPublishedContent` Model Factory
 
-> **Warning:** The Model Factory implementation for Ditto should be considered as a prototype / proof-of-concept. You will receive limited support (from the Ditto team) if you choose to use it.
+> **Warning:** The Model Factory implementation for Ditto should be considered as a prototype / proof-of-concept. You will receive **zero support** (from the Ditto team) if you choose to use it.
 
 As of v7.1.4, Umbraco ships with using a default model factory for `IPublishedContent`.
 For more information about the [IPublishedContentModelFactory](https://github.com/zpqrtbnk/Zbu.ModelsBuilder/wiki/IPublishedContentModelFactory) please the "Zbu.ModelsBuilder" wiki:

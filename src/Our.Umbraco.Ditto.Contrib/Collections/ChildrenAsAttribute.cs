@@ -2,14 +2,14 @@
 
 namespace Our.Umbraco.Ditto
 {
-    public class ChildrenAs : DittoMultiProcessorAttribute
+    public class ChildrenAsAttribute : DittoMultiProcessorAttribute
     {
-        public ChildrenAs(params string[] documentTypeAliases)
+        public ChildrenAsAttribute(params string[] documentTypeAliases)
         {
             Attributes = new List<DittoProcessorAttribute>()
             {
                 new UmbracoPropertyAttribute("Children"),
-                new PublishedContentByDocumentTypeAlias(documentTypeAliases)
+                new PublishedContentByDocumentTypeAliasAttribute(documentTypeAliases)
             };
         }
     }

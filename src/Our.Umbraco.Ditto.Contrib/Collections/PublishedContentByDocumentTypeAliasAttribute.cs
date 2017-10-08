@@ -3,9 +3,9 @@ using Umbraco.Core;
 
 namespace Our.Umbraco.Ditto
 {
-    internal class PublishedContentByDocumentTypeAlias : PublishedContentFilter
+    public class PublishedContentByDocumentTypeAliasAttribute : PublishedContentFilterAttribute
     {
-        public PublishedContentByDocumentTypeAlias(params string[] documentTypeAliases)
+        public PublishedContentByDocumentTypeAliasAttribute(params string[] documentTypeAliases)
         {
             if (documentTypeAliases != null && documentTypeAliases.Any())
             {

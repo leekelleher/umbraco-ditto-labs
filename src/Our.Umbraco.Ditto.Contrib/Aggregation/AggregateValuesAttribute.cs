@@ -8,17 +8,17 @@ using Umbraco.Web;
 
 namespace Our.Umbraco.Ditto
 {
-    public class AggregateValues : DittoProcessorAttribute
+    public class AggregateValuesAttribute : DittoProcessorAttribute
     {
-        public AggregateValues()
+        public AggregateValuesAttribute()
             : this(null)
         { }
 
-        public AggregateValues(string propertyName)
+        public AggregateValuesAttribute(string propertyName)
             : this(propertyName, false)
         { }
 
-        public AggregateValues(string propertyName, bool reverseOrder)
+        public AggregateValuesAttribute(string propertyName, bool reverseOrder)
         {
             this.PropertyName = propertyName;
             this.ReverseOrder = reverseOrder;

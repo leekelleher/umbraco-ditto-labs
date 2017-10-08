@@ -39,16 +39,16 @@ namespace Our.Umbraco.Ditto
             switch (this.RelationDirection)
             {
                 case RelationDirection.ChildToParent:
-                    relations = ApplicationContext.Current.Services.RelationService.GetByChildId(content.Id);
+                    relations = Services.RelationService.GetByChildId(content.Id);
                     break;
 
                 case RelationDirection.ParentToChild:
-                    relations = ApplicationContext.Current.Services.RelationService.GetByParentId(content.Id);
+                    relations = Services.RelationService.GetByParentId(content.Id);
                     break;
 
                 case RelationDirection.Bidirectional:
                 default:
-                    relations = ApplicationContext.Current.Services.RelationService.GetByParentOrChildId(content.Id);
+                    relations = Services.RelationService.GetByParentOrChildId(content.Id);
                     break;
             }
 
