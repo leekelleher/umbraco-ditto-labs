@@ -14,4 +14,4 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 [assembly: Guid("3BDAB554-01B6-43BD-B391-902B67E88FA5")]
 
-[assembly: InternalsVisibleTo("Our.Umbraco.Ditto.Tests")]
+[assembly: InternalsVisibleTo("Umbraco.Tests")]

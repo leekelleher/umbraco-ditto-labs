@@ -1,5 +1,5 @@
-﻿using Archetype.Models;
-using Archetype.Extensions;
+﻿using Archetype.Extensions;
+using Archetype.Models;
 using Umbraco.Core.Models;
 
 namespace Our.Umbraco.Ditto

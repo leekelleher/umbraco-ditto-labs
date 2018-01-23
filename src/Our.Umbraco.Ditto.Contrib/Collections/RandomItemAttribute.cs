@@ -9,9 +9,7 @@ namespace Our.Umbraco.Ditto.Collections
     {
         public override object ProcessValue()
         {
-            var items = Value as IEnumerable<object>;
-
-            if (items != null)
+            if (Value is IEnumerable<object> items)
             {
                 var random = new Random();
                 var randomIndex = random.Next(items.Count());

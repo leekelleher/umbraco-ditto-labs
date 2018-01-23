@@ -23,7 +23,7 @@ namespace Our.Umbraco.Ditto
                 ? Enumerable.Empty<string>()
                 : strValue.Split(new[] { _delimiter }, StringSplitOptions.RemoveEmptyEntries)
                     .Select(x => x.Trim())
-                    .Where(x => !x.IsNullOrWhiteSpace())
+                    .Where(x => x.IsNullOrWhiteSpace() == false)
                     .ToList();
         }
     }

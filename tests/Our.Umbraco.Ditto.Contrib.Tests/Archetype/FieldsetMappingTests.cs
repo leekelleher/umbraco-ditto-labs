@@ -3,7 +3,7 @@ using Archetype.Models;
 using Archetype.PropertyConverters;
 using NUnit.Framework;
 
-namespace Our.Umbraco.Ditto.Archetype.Tests
+namespace Our.Umbraco.Ditto.Contrib.Tests.Archetype
 {
     [TestFixture]
     public class FieldsetMappingTests

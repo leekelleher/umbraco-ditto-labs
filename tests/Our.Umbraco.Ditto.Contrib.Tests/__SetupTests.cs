@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using Our.Umbraco.Ditto.Shared.Mocks;
+using Our.Umbraco.Ditto.Mocks;
 using Umbraco.Core.Logging;
 using Umbraco.Core.ObjectResolution;
 
-namespace Our.Umbraco.Ditto.Archetype.Tests
+namespace Our.Umbraco.Ditto.Contrib.Tests
 {
     [SetUpFixture]
     public class __SetupTests

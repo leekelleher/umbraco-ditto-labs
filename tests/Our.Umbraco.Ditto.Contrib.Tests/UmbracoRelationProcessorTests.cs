@@ -4,7 +4,7 @@ using System.Web;
 using System.Web.Security;
 using Moq;
 using NUnit.Framework;
-using Our.Umbraco.Ditto.Contrib.Tests.Mocks;
+using Our.Umbraco.Ditto.Mocks;
 using Umbraco.Core;
 using Umbraco.Core.Configuration.UmbracoSettings;
 using Umbraco.Core.Logging;
@@ -54,7 +54,7 @@ namespace Our.Umbraco.Ditto.Contrib
                 urlProviders: Enumerable.Empty<IUrlProvider>(),
                 replaceContext: true);
 
-            UmbracoPickerHelper.GetMembershipHelper = (ctx) => new MembershipHelper(ctx, Mock.Of<MembershipProvider>(), Mock.Of<RoleProvider>());
+            //UmbracoPickerHelper.GetMembershipHelper = (ctx) => new MembershipHelper(ctx, Mock.Of<MembershipProvider>(), Mock.Of<RoleProvider>());
 
             Resolution.Freeze();
 

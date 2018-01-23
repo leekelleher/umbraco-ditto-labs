@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Umbraco.Core.Logging;
 
-namespace Our.Umbraco.Ditto.Shared.Mocks
+namespace Our.Umbraco.Ditto.Mocks
 {
     public class MockLogger : ILogger
     {

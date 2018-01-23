@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
-using Our.Umbraco.Ditto.Contrib.Tests.Mocks;
+using Our.Umbraco.Ditto.Mocks;
 using Umbraco.Core.Models;
 
 namespace Our.Umbraco.Ditto.Contrib
@@ -57,7 +57,7 @@ namespace Our.Umbraco.Ditto.Contrib
         [TestCase(typeof(MyModel1), 1)]
         [TestCase(typeof(MyModel2), 2)]
         [TestCase(typeof(MyModel3), 3)]
-        public void ChildrenAs_Resolves(Type type, int count, int lastId)
+        public void ChildrenAs_Resolves(Type type, int count)
         {
             var model = (IMyModel)Content.As(type);
 

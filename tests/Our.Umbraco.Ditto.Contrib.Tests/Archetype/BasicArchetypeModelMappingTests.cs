@@ -1,7 +1,8 @@
 ﻿using Archetype.Models;
 using NUnit.Framework;
+using Our.Umbraco.Ditto.Mocks;
 
-namespace Our.Umbraco.Ditto.Archetype.Tests
+namespace Our.Umbraco.Ditto.Contrib.Tests.Archetype
 {
     [TestFixture]
     public class BasicArchetypeModelMappingTests
@@ -16,8 +17,8 @@ namespace Our.Umbraco.Ditto.Archetype.Tests
         {
             var archetype = new ArchetypeModel();
 
-            var property = new Shared.Mocks.MockPublishedProperty("myProperty", archetype, true);
-            var content = new Shared.Mocks.MockPublishedContent { Properties = new[] { property } };
+            var property = new MockPublishedProperty("myProperty", archetype, true);
+            var content = new MockPublishedContent { Properties = new[] { property } };
 
             var model = content.As<BasicModel>();
 

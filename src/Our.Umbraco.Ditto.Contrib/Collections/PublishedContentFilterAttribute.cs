@@ -12,16 +12,14 @@ namespace Our.Umbraco.Ditto
 
         public override object ProcessValue()
         {
-            var content = Value as IPublishedContent;
-            if (content != null)
+            if (Value is IPublishedContent content)
             {
                 return Filter != null && Filter(content)
                     ? content
                     : null;
             }
 
-            var items = Value as IEnumerable<IPublishedContent>;
-            if (items != null)
+            if (Value is IEnumerable<IPublishedContent> items)
             {
                 return Filter != null
                     ? items.Where(Filter)

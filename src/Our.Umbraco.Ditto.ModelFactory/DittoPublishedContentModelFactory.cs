@@ -1,14 +1,13 @@
-﻿namespace Our.Umbraco.Ditto
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.PublishedContent;
+using Umbraco.Web;
+
+namespace Our.Umbraco.Ditto
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-
-    using global::Umbraco.Core;
-    using global::Umbraco.Core.Models;
-    using global::Umbraco.Core.Models.PublishedContent;
-    using global::Umbraco.Web;
-
     /// <summary>
     /// The Ditto published content model factory for creating strong typed models.
     /// </summary>
@@ -38,7 +37,7 @@
                 var attribute = type.GetCustomAttribute<PublishedContentModelAttribute>(false);
                 var typeName = attribute == null ? type.Name : attribute.ContentTypeAlias;
 
-                if (!converters.ContainsKey(typeName))
+                if (converters.ContainsKey(typeName) == false)
                 {
                     converters.Add(typeName, func);
                 }
@@ -71,9 +70,8 @@
             }
 
             var contentTypeAlias = content.DocumentTypeAlias;
-            Func<IPublishedContent, IPublishedContent> converter;
 
-            if (!this.converterCache.TryGetValue(contentTypeAlias, out converter))
+            if (this.converterCache.TryGetValue(contentTypeAlias, out Func<IPublishedContent, IPublishedContent> converter) == false)
             {
                 return content;
             }

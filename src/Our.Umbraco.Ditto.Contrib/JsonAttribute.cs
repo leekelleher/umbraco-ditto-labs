@@ -9,11 +9,11 @@ namespace Our.Umbraco.Ditto
             if (Value == null)
                 return null;
 
-            var strVal = !(Value is string)
+            var strVal = (Value is string) == false
                 ? JsonConvert.SerializeObject(Value)
                 : Value.ToString();
 
-            if (string.IsNullOrWhiteSpace(strVal) || !DetectIsJson(strVal))
+            if (string.IsNullOrWhiteSpace(strVal) || DetectIsJson(strVal) == false)
                 return null;
 
             return JsonConvert.DeserializeObject(strVal, Context.PropertyDescriptor.PropertyType);

@@ -1,11 +1,10 @@
-﻿namespace Our.Umbraco.Ditto
+﻿using System;
+using Umbraco.Core;
+using Umbraco.Core.Models;
+using Umbraco.Core.Models.PublishedContent;
+
+namespace Our.Umbraco.Ditto
 {
-    using System;
-
-    using global::Umbraco.Core;
-    using global::Umbraco.Core.Models;
-    using global::Umbraco.Core.Models.PublishedContent;
-
     /// <summary>
     /// Encapsulates extension methods for <see cref="PublishedContentModelFactoryResolver"/>.
     /// </summary>

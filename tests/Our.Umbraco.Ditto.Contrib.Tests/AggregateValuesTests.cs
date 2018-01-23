@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
-using Our.Umbraco.Ditto.Contrib.Tests.Mocks;
+using Our.Umbraco.Ditto.Mocks;
 
 namespace Our.Umbraco.Ditto.Contrib
 {

@@ -1,8 +1,9 @@
 ﻿using Archetype.Models;
 using Archetype.PropertyConverters;
 using NUnit.Framework;
+using Our.Umbraco.Ditto.Mocks;
 
-namespace Our.Umbraco.Ditto.Archetype.Tests
+namespace Our.Umbraco.Ditto.Contrib.Tests.Archetype
 {
     [TestFixture]
     public class SimplePropertyMappingTests
@@ -32,8 +33,8 @@ namespace Our.Umbraco.Ditto.Archetype.Tests
         [Test]
         public void Simple_Property_Mapped()
         {
-            var property = new Shared.Mocks.MockPublishedProperty("myProperty", _archetype, true);
-            var content = new Shared.Mocks.MockPublishedContent { Properties = new[] { property } };
+            var property = new MockPublishedProperty("myProperty", _archetype, true);
+            var content = new MockPublishedContent { Properties = new[] { property } };
 
             var model = content.As<MyModel>();
 

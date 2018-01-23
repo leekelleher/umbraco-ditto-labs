@@ -5,7 +5,7 @@ using Umbraco.Core.Models;
 using Umbraco.Core.Models.EntityBase;
 using Umbraco.Core.Services;
 
-namespace Our.Umbraco.Ditto.Contrib.Tests.Mocks
+namespace Our.Umbraco.Ditto.Mocks
 {
     public class MockRelationService : IRelationService
     {

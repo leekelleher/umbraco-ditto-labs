@@ -6,7 +6,7 @@ namespace Our.Umbraco.Ditto
     {
         public override object ProcessValue()
         {
-            if (UmbracoContext == null || !UmbracoContext.PageId.HasValue)
+            if (UmbracoContext == null || UmbracoContext.PageId.HasValue == false)
                 return null;
 
             return UmbracoContext.ContentCache.GetById(UmbracoContext.PageId.Value);

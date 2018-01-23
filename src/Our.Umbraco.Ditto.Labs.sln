@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2009
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Ditto.Contrib", "Our.Umbraco.Ditto.Contrib\Our.Umbraco.Ditto.Contrib.csproj", "{4AF5DC3A-26DE-407F-8F42-8CEDD2C1ED4E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Ditto.Contrib.Tests", "..\tests\Our.Umbraco.Ditto.Contrib.Tests\Our.Umbraco.Ditto.Contrib.Tests.csproj", "{20366B42-B010-447C-8B02-7D949C80487D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DCD71310-4E25-4C37-9A1F-AF720684F676}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unit Tests", "Unit Tests", "{7BB3BF08-2F08-435D-95F0-63974AF857C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Ditto.Archetype", "Our.Umbraco.Ditto.Archetype\Our.Umbraco.Ditto.Archetype.csproj", "{6C5D5B08-C390-4D15-B7FC-4DA82485E97A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Ditto.ModelFactory", "Our.Umbraco.Ditto.ModelFactory\Our.Umbraco.Ditto.ModelFactory.csproj", "{956A042E-6DF1-4157-9D61-4CE9EF90263B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Our.Umbraco.Ditto.Mocks", "..\tests\Our.Umbraco.Ditto.Mocks\Our.Umbraco.Ditto.Mocks.csproj", "{A64E1345-569A-4B45-A0E6-9B1CF938F706}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mocks", "Mocks", "{D0ABCAAE-A0CA-42C4-A127-F49D5F04CDBB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AF5DC3A-26DE-407F-8F42-8CEDD2C1ED4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AF5DC3A-26DE-407F-8F42-8CEDD2C1ED4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AF5DC3A-26DE-407F-8F42-8CEDD2C1ED4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AF5DC3A-26DE-407F-8F42-8CEDD2C1ED4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20366B42-B010-447C-8B02-7D949C80487D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20366B42-B010-447C-8B02-7D949C80487D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20366B42-B010-447C-8B02-7D949C80487D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20366B42-B010-447C-8B02-7D949C80487D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C5D5B08-C390-4D15-B7FC-4DA82485E97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C5D5B08-C390-4D15-B7FC-4DA82485E97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C5D5B08-C390-4D15-B7FC-4DA82485E97A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C5D5B08-C390-4D15-B7FC-4DA82485E97A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{956A042E-6DF1-4157-9D61-4CE9EF90263B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{956A042E-6DF1-4157-9D61-4CE9EF90263B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{956A042E-6DF1-4157-9D61-4CE9EF90263B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{956A042E-6DF1-4157-9D61-4CE9EF90263B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A64E1345-569A-4B45-A0E6-9B1CF938F706}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A64E1345-569A-4B45-A0E6-9B1CF938F706}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A64E1345-569A-4B45-A0E6-9B1CF938F706}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A64E1345-569A-4B45-A0E6-9B1CF938F706}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20366B42-B010-447C-8B02-7D949C80487D} = {7BB3BF08-2F08-435D-95F0-63974AF857C3}
+		{7BB3BF08-2F08-435D-95F0-63974AF857C3} = {DCD71310-4E25-4C37-9A1F-AF720684F676}
+		{A64E1345-569A-4B45-A0E6-9B1CF938F706} = {D0ABCAAE-A0CA-42C4-A127-F49D5F04CDBB}
+		{D0ABCAAE-A0CA-42C4-A127-F49D5F04CDBB} = {DCD71310-4E25-4C37-9A1F-AF720684F676}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {666C5D32-CF84-40F5-91DC-D5DCE03F7E3E}
+	EndGlobalSection
+EndGlobal
