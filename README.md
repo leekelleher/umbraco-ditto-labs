@@ -1,4 +1,7 @@
 # Ditto Labs
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
+
 ## Fun with Ditto!
 
 The Ditto Labs are a way to try out experiments with Umbraco, Ditto and other 3rd party libraries.
